@@ -1,0 +1,196 @@
+@keyframes content-animation
+  0% 
+    background-position 0, 0
+  100% 
+    background-position -100% 0
+@keyframes lineOne
+  0%
+    clip rect(0, 400px, 2px, 0)
+  25%
+    clip rect(0, 3px, 329px, 0)
+  50%
+    clip rect(326px, 400px, 329px, 2px)
+  75%
+    clip rect(0, 400px, 328px, 396px)
+  100%
+    clip rect(0, 400px, 2px, 0)
+@keyframes lineTwo 
+  0%
+    clip rect(0, 400px, 2px, 0)
+  25%
+    clip rect(0, 2px, 329px, 0)
+  50%
+    clip rect(326px, 400px, 329px, 2px)
+  75%
+    clip rect(0, 400px, 328px, 396px)
+  100% 
+    clip rect(0, 400px, 2px, 0)
+@keyframes rotateWord
+  0%
+    opacity 0
+  5%
+    opacity 1
+  17%
+    opacity 1
+    -webkit-transform rotate(0deg)
+    transform rotate(0deg)
+  19%
+    opacity 1
+    -webkit-transform rotate(98deg)
+    transform rotate(98deg)
+  21%
+    opacity 1
+    -webkit-transform rotate(86deg)
+    transform rotate(86deg)
+  23%
+    opacity 1
+    -webkit-transform translateY(85px) rotate(83deg)
+    transform translateY(85px) rotate(83deg)
+  25%
+    opacity 0
+    -webkit-transform translateY(170px) rotate(80deg)
+    transform translateY(170px) rotate(80deg)
+  80%
+    opacity 0
+  100%
+    opacity 0
+@keyframes rotating
+  0%
+    -webkit-transform rotate(0deg)
+    transform rotate(0deg)
+  100%
+    -webkit-transform rotate(360deg)
+    transform rotate(360deg)
+@keyframes moverandom
+  0%
+    right 100px
+    display none
+  100%
+    right 100%
+@keyframes rotate
+  0%
+    -webkit-transform: rotateX(0deg) rotateY(0deg)
+    transform: rotateX(0deg) rotateY(0deg)
+  100%
+    -webkit-transform: rotateX(360deg) rotateY(360deg)
+    transform: rotateX(360deg) rotateY(360deg)
+.rw-words span
+  display inline
+  white-space nowrap
+  position absolute
+  color #fff
+  opacity 0
+  overflow hidden
+  color #ff005c
+  -webkit-transform-origin 10% 75%
+  transform-origin 10% 75%
+  -webkit-animation rotateWord 21s linear infinite 0s
+  -ms-animation rotateWord 21s linear infinite 0s
+  animation rotateWord 21s linear infinite 0s
+.rw-words span:nth-child(2)
+  -webkit-animation-delay 3s
+  -ms-animation-delay 3s
+  animation-delay 3s
+  color #ffa500
+.rw-words span:nth-child(3)
+  -webkit-animation-delay 6s
+  -ms-animation-delay 6s
+  animation-delay 6s
+  color #ff0
+.rw-words span:nth-child(4)
+  -webkit-animation-delay 9s
+  -ms-animation-delay 9s
+  animation-delay 9s
+  color #60ec1b
+.rw-words span:nth-child(5)
+  -webkit-animation-delay 12s
+  -ms-animation-delay 12s
+  animation-delay 12s
+  color #1af9f0
+.rw-words span:nth-child(6)
+  -webkit-animation-delay 15s
+  -ms-animation-delay 15s
+  animation-delay 15s
+  color #87ceeb
+.rw-words span:nth-child(7)
+  -webkit-animation-delay 18s
+  -ms-animation-delay 18s
+  animation-delay 18s
+  color #f110f3
+.line:hover::before
+  content ''
+  position absolute
+  left 0
+  top 0
+  bottom 0
+  right 0
+  border 2px solid skyblue
+  animation lineOne 8s linear infinite
+  animation-delay: -4s
+  z-index 99
+.line:hover::after
+  content ''
+  position absolute
+  left 0
+  top 0
+  bottom 0
+  right 0
+  border 2px solid skyblue
+  animation-delay 4s
+  animation lineTwo 8s linear infinite
+  z-index 99
+.cube .out_front
+  -webkit-transform rotateY(0deg) translateZ(100px)
+  transform rotateY(0deg) translateZ(100px)
+.cube .out_back
+  -webkit-transform translateZ(-100px) rotateY(180deg)
+  transform translateZ(-100px) rotateY(180deg)
+.cube .out_left
+  -webkit-transform rotateY(90deg) translateZ(100px)
+  transform rotateY(90deg) translateZ(100px)
+.cube .out_right
+  -webkit-transform: rotateY(-90deg) translateZ(100px)
+  transform: rotateY(-90deg) translateZ(100px)
+.cube .out_top
+  -webkit-transform rotateX(90deg) translateZ(100px)
+  transform rotateX(90deg) translateZ(100px)
+.cube .out_bottom
+  -webkit-transform rotateX(-90deg) translateZ(100px)
+  transform rotateX(-90deg) translateZ(100px)
+.cube .in_front
+  -webkit-transform rotateY(0deg) translateZ(50px)
+  transform rotateY(0deg) translateZ(50px)
+.cube .in_back
+  -webkit-transform translateZ(-50px) rotateY(180deg)
+  transform translateZ(-50px) rotateY(180deg)
+.cube .in_left
+  -webkit-transform rotateY(90deg) translateZ(50px)
+  transform rotateY(90deg) translateZ(50px)
+.cube .in_right
+  -webkit-transform rotateY(-90deg) translateZ(50px)
+  transform rotateY(-90deg) translateZ(50px)
+.cube .in_top
+  -webkit-transform rotateX(90deg) translateZ(50px)
+  transform rotateX(90deg) translateZ(50px)
+.cube .in_bottom
+  -webkit-transform rotateX(-90deg) translateZ(50px)
+  transform rotateX(-90deg) translateZ(50px)
+/*鼠标移入后样式*/
+.cube:hover .out_front
+  -webkit-transform rotateY(0deg) translateZ(200px)
+  transform rotateY(0deg) translateZ(200px)
+.cube:hover .out_back
+  -webkit-transform translateZ(-200px) rotateY(180deg)
+  transform translateZ(-200px) rotateY(180deg)
+.cube:hover .out_left
+  -webkit-transform rotateY(90deg) translateZ(200px)
+  transform rotateY(90deg) translateZ(200px)
+.cube:hover .out_right
+  -webkit-transform rotateY(-90deg) translateZ(200px)
+  transform rotateY(-90deg) translateZ(200px)
+.cube:hover .out_top
+  -webkit-transform rotateX(90deg) translateZ(200px)
+  transform rotateX(90deg) translateZ(200px)
+.cube:hover .out_bottom
+  -webkit-transform rotateX(-90deg) translateZ(200px)
+  transform rotateX(-90deg) translateZ(200px)

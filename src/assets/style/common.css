@@ -1,0 +1,40 @@
+html,
+body {
+    font-size: 100px;
+    font-family: Microsoft YaHei;
+    scroll-behavior: smooth;
+    cursor: url(../img/click1.png), default !important;
+}
+a {
+    cursor: url(../img/click2.png), default !important;
+}
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+::-webkit-scrollbar {
+    width: 4px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-track-piece{
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #BBB;
+}
