@@ -216,7 +216,6 @@ export default {
         // 提交评论
         submitMessage() {
             this.showModel = false
-            console.log(this.form)
         }
     },
     watch: {},
