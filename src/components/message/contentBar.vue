@@ -63,8 +63,8 @@ export default {
                     } else {
                         el.style.top = e.clientY - disy + 'px'
                     }
-                    if (e.clientX - disx > oW - 235) {
-                        el.style.left = oW - 235 + 'px'
+                    if (e.clientX - disx > oW - 255) {
+                        el.style.left = oW - 255 + 'px'
                     } else if (e.clientX - disx < 0) {
                         el.style.left = 0
                     } else {
@@ -202,8 +202,8 @@ export default {
         handlePosition() {
             let oH = document.getElementsByClassName('contentBar')[0].clientHeight
             let oW = document.getElementsByClassName('contentBar')[0].clientWidth
-            let oLeftMax = oW - 235
-            let oHeightMax = oH - 235
+            let oLeftMax = oW - 255
+            let oHeightMax = oH - 255
             this.contentList.forEach(o => {
                 o.top = Math.floor(Math.random() * oHeightMax) + 'px'
                 o.left = Math.floor(Math.random() * oLeftMax) + 'px'
