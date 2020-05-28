@@ -1,99 +1,127 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="keywords" content="个人主页-田洛洛">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=0">
-        <meta name="description" content="个人主页-田洛洛">
-        <meta name="author" content="Luo">
-        <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-        <title>个人主页</title>
-    </head>
-    <body>
-        <noscript>
-            <strong>
-                We're sorry but myblog doesn't work properly without JavaScript enabled. Please enable it to continue.
-            </strong>
-        </noscript>
-        <script type="text/javascript">
-            (function(window, document, undefined) {
-                var hearts = [];
-                window.requestAnimationFrame = (function() {
-                    return window.requestAnimationFrame ||
-                        window.webkitRequestAnimationFrame ||
-                        window.mozRequestAnimationFrame ||
-                        window.oRequestAnimationFrame ||
-                        window.msRequestAnimationFrame ||
-                        function(callback) {
-                            setTimeout(callback, 1000 / 60);
-                        }
-                })();
-                init();
-                function init() {
-                    css(
-                        ".heart { width: 10px;height: 10px;z-index:999;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}"
-                    );
-                    attachEvent();
-                    gameloop();
-                }
-                function gameloop() {
-                    for (var i = 0; i < hearts.length; i++) {
-                        if (hearts[i].alpha <= 0) {
-                            document.body.removeChild(hearts[i].el);
-                            hearts.splice(i, 1);
-                            continue;
-                        }
-                        hearts[i].y--;
-                        hearts[i].scale += 0.004;
-                        hearts[i].alpha -= 0.013;
-                        hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y +
-                            "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[
-                                i].scale + ") rotate(45deg);background:" + hearts[i].color;
-                    }
-                    requestAnimationFrame(gameloop);
-                }
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="pragram" content="no-cache" />
+		<meta
+			http-equiv="cache-control"
+			content="no-cache, no-store, must-revalidate"
+		/>
+		<meta name="keywords" content="洛之空" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=0"
+		/>
+		<meta name="description" content="洛之空" />
+		<meta name="author" content="Luo" />
+		<link rel="shortcut icon" href="<%= BASE_URL %>favicon.ico" />
+		<title>洛之空</title>
+	</head>
+	<body>
+		<noscript>
+			<strong>
+				我们很抱歉没有JavaScript网站无法正常工作，请启用JavaScript。
+			</strong>
+		</noscript>
+		<script>
+			(function(window, document) {
+				var hearts = [];
+				window.requestAnimationFrame = (function() {
+					return (
+						window.requestAnimationFrame ||
+						window.webkitRequestAnimationFrame ||
+						window.mozRequestAnimationFrame ||
+						window.oRequestAnimationFrame ||
+						window.msRequestAnimationFrame ||
+						function(callback) {
+							setTimeout(callback, 1000 / 60);
+						}
+					);
+				})();
+				init();
+				function init() {
+					css(
+						".heart { width: 10px;height: 10px;z-index:999;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}"
+					);
+					attachEvent();
+					gameloop();
+				}
+				function gameloop() {
+					for (var i = 0; i < hearts.length; i++) {
+						if (hearts[i].alpha <= 0) {
+							document.body.removeChild(hearts[i].el);
+							hearts.splice(i, 1);
+							continue;
+						}
+						hearts[i].y--;
+						hearts[i].scale += 0.004;
+						hearts[i].alpha -= 0.013;
+						hearts[i].el.style.cssText =
+							'left:' +
+							hearts[i].x +
+							'px;top:' +
+							hearts[i].y +
+							'px;opacity:' +
+							hearts[i].alpha +
+							';transform:scale(' +
+							hearts[i].scale +
+							',' +
+							hearts[i].scale +
+							') rotate(45deg);background:' +
+							hearts[i].color;
+					}
+					requestAnimationFrame(gameloop);
+				}
 
-                function attachEvent() {
-                    var old = typeof window.onclick === "function" && window.onclick;
-                    window.onclick = function(event) {
-                        old && old();
-                        createHeart(event);
-                    }
-                }
+				function attachEvent() {
+					var old =
+						typeof window.onclick === 'function' && window.onclick;
+					window.onclick = function(event) {
+						old && old();
+						createHeart(event);
+					};
+				}
 
-                function createHeart(event) {
-                    var d = document.createElement("div");
-                    d.className = "heart";
-                    hearts.push({
-                        el: d,
-                        x: event.clientX - 5,
-                        y: event.clientY - 5,
-                        scale: 1,
-                        alpha: 1,
-                        color: randomColor()
-                    });
-                    document.body.appendChild(d);
-                }
+				function createHeart(event) {
+					var d = document.createElement('div');
+					d.className = 'heart';
+					hearts.push({
+						el: d,
+						x: event.clientX - 5,
+						y: event.clientY - 5,
+						scale: 1,
+						alpha: 1,
+						color: randomColor(),
+					});
+					document.body.appendChild(d);
+				}
 
-                function css(css) {
-                    var style = document.createElement("style");
-                    style.type = "text/css";
-                    try {
-                        style.appendChild(document.createTextNode(css));
-                    } catch (ex) {
-                        style.styleSheet.cssText = css;
-                    }
-                    document.getElementsByTagName('head')[0].appendChild(style);
-                }
+				function css(css) {
+					var style = document.createElement('style');
+					style.type = 'text/css';
+					try {
+						style.appendChild(document.createTextNode(css));
+					} catch (ex) {
+						style.styleSheet.cssText = css;
+					}
+					document.getElementsByTagName('head')[0].appendChild(style);
+				}
 
-                function randomColor() {
-                    return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() *
-                        255)) + ")";
-                }
-            })(window, document);
-        </script>
-        <div id="app"></div>
-        <!-- built files will be auto injected -->
-    </body>
+				function randomColor() {
+					return (
+						'rgb(' +
+						~~(Math.random() * 255) +
+						',' +
+						~~(Math.random() * 255) +
+						',' +
+						~~(Math.random() * 255) +
+						')'
+					);
+				}
+			})(window, document);
+		</script>
+		<!-- <script src="./src/utils/clickHeart.js"></script> -->
+		<div id="app"></div>
+	</body>
 </html>

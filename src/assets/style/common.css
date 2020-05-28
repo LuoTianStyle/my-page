@@ -1,40 +1,79 @@
 html,
 body {
-    font-size: 100px;
-    font-family: Microsoft YaHei;
-    scroll-behavior: smooth;
-    cursor: url(../img/click1.png), default !important;
-}
-a {
-    cursor: url(../img/click2.png), default !important;
-}
-ul,
-li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  font-size: 100px;
+  font-family: Microsoft YaHei;
+  scroll-behavior: smooth;
+  cursor: url(../img/click1.png), default !important;
 }
 
 a {
-    text-decoration: none;
+  cursor: url(../img/click2.png), default !important;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 p {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
+
 ::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
+
 ::-webkit-scrollbar-button {
-    display: none;
+  display: none;
 }
+
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
-::-webkit-scrollbar-track-piece{
-    background: transparent;
+
+::-webkit-scrollbar-track-piece {
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #BBB;
+  background: #BBB;
+}
+
+.heart {
+  width: 10px;
+  height:
+    10px;
+  z-index: 999;
+  position: fixed;
+  background: #f00;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+
+.heart:after,
+.heart:before {
+  content: '';
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  position: absolute;
+}
+
+.heart:after {
+  top: -5px;
+}
+
+.heart:before {
+  left: -5px;
 }
