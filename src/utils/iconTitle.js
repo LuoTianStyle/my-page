@@ -9,5 +9,4 @@ export const iconTitleChange = title => {
 		document.querySelector('link[rel="shortcut icon"]').href =
 			'/favicon.ico';
 	}
-	console.log(document.title);
 };

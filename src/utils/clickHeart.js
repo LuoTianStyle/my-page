@@ -1,4 +1,4 @@
-(function(window, document) {
+export const hearts = () => {
 	const hearts = [];
 	const timeHandle = function(callback) {
 		setTimeout(callback, 1000 / 60);
@@ -20,19 +20,12 @@
 				item.y--;
 				item.scale += 0.004;
 				item.alpha -= 0.013;
-				item.el.style.left =item.x
-					'left:' +
-					item.x +
-					'px;top:' +
-					item.y +
-					'px;opacity:' +
-					item.alpha +
-					';transform:scale(' +
-					item.scale +
-					',' +
-					item.scale +
-					') rotate(45deg);background:' +
-					item.color;
+				const style = item.el.style;
+				style.left = `${item.x}px`;
+				style.top = `${item.y}px`;
+				style.opacity = `${item.alpha}`;
+				style.transform = `scale(${item.scale}) rotate(45deg)`;
+				style.background = `${item.color}`;
 			}
 		});
 		requestAnimationFrame(gameloop);
@@ -66,4 +59,4 @@
 		gameloop();
 	};
 	init();
-})(window, document);
+};
