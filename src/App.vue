@@ -6,6 +6,7 @@
 
 <script>
 import { iconTitleChange } from '@/utils/iconTitle';
+import { hearts } from '@/utils/clickHeart';
 export default {
 	name: 'App',
 	methods: {
@@ -16,6 +17,7 @@ export default {
 	mounted() {
 		// 游览器标签页切换时修改title和icon事件
 		document.addEventListener('visibilitychange', this.iconTitleHandle);
+		hearts();
 	},
 	beforeDestroy() {
 		window.removeEventListener('visibilitychange', this.iconTitleHandle);
