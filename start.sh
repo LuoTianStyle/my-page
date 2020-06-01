@@ -1,5 +1,6 @@
 echo '进入项目目录'
 cd /data/www
+echo '分支'
 git clean -f
 git reset --hard origin/master
 echo '拉取代码'
