@@ -153,7 +153,7 @@ export default {
         background: #f1f1f1;
         border-radius: 8px;
         margin-right: 12px;
-        cursor: url('../img/click1.c201d4b5.png'), default !important;
+        cursor: url('~img/click2.png'), default !important;
       }
 
       .default-btn {
@@ -195,7 +195,7 @@ export default {
       line-height: 30px;
       text-align: center;
       font-size: 18px;
-      cursor: url('../img/click1.c201d4b5.png'), default !important;
+      cursor: url('~img/click2.png'), default !important;
 
       &:hover {
         font-weight: 600;
