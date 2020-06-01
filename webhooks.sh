@@ -1,4 +1,4 @@
-cd /data/wwww
+cd '/data/wwww'
 git pull
 npm i
 npm run build
