@@ -269,7 +269,7 @@ export default {
     -webkit-transition: opacity 0.5s;
     transition: opacity 0.5s;
     z-index: 98;
-    cursor: url('~img/click2.png') default !important;
+    cursor: url('~img/click2.png'), default !important;
 
     &:hover {
       opacity: 0.8;
@@ -284,7 +284,7 @@ export default {
     font-size: 0.5rem;
     z-index: 98;
     padding: 0.1rem;
-    cursor: url('~img/click2.png') default !important;
+    cursor: url('~img/click2.png'), default !important;
 
     &.icon {
       width: 0.3rem;
