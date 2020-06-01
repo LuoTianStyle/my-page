@@ -1,4 +1,4 @@
-# myblog
+# my-page
 
 ## Project setup
 
