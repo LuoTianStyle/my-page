@@ -147,7 +147,7 @@ export default {
 .item {
   display: inline-block;
   margin: 0.1rem;
-  cursor: url(../img/click1.c201d4b5.png), default !important;
+  cursor: url(~img/click2.png), default !important;
 }
 
 .red,
