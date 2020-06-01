@@ -2,5 +2,5 @@ cd /data/www
 git clean -f
 git reset --hard origin/master
 git pull
-cnpm install
-npm run build
+sudo cnpm install
+sudo npm run build
