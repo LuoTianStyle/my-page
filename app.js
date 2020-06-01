@@ -1,5 +1,5 @@
 var http = require("http");
-var createHandler = require("/usr/local/node-v12/bin/github-webhook-handler");
+var createHandler = require("/usr/local/node-v12/lib/node_modules/github-webhook-handler");
 var handler = createHandler({ path: "/", secret: "123456" });
 
 function RunCmd(cmd, args, cb) {
