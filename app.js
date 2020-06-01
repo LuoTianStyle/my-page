@@ -1,18 +1,16 @@
 var http = require('http');
-
-var createHandler = require('/usr/local/node-v12/lib/node_modules/github-webhook-handler');
+var createHandler = require('github-webhook-handler');
 var handler = createHandler({ path: '/', secret: '123456' });
 
-function run_cmd(cmd, args, callback) {
+function RunCmd(cmd, args, cb) {
 	var spawn = require('child_process').spawn;
 	var child = spawn(cmd, args);
-	var resp = '';
-
-	child.stdout.on('data', function(buffer) {
-		resp += buffer.toString();
+	var result = '';
+	child.stdout.on('data', function(data) {
+		result += data.toString();
 	});
 	child.stdout.on('end', function() {
-		callback(resp);
+		cb(result);
 	});
 }
 
@@ -33,9 +31,18 @@ handler.on('push', function(event) {
 		event.payload.repository.name,
 		event.payload.ref
 	);
-	run_cmd('sh', ['./webhooks.sh', event.payload.repository.name], function(
-		text
-	) {
-		console.log(text);
+	var shpath = './start.sh';
+	RunCmd('sh', [shpath], function(result) {
+		console.log(result);
 	});
+});
+
+handler.on('issues', function(event) {
+	console.log(
+		'Received an issue event for %s action=%s: #%d %s',
+		event.payload.repository.name,
+		event.payload.action,
+		event.payload.issue.number,
+		event.payload.issue.title
+	);
 });
