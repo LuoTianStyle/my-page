@@ -147,7 +147,7 @@ export default {
 .item {
   display: inline-block;
   margin: 0.1rem;
-  cursor: pointer;
+  cursor: url(../img/click1.c201d4b5.png), default !important;
 }
 
 .red,
@@ -295,7 +295,7 @@ export default {
           color: #b2b2ae;
           font-size: 0.12rem;
           margin-left: 0.05rem;
-          cursor: pointer;
+          cursor: url('../img/click1.c201d4b5.png'), default !important;
 
           &:hover {
             text-decoration: underline;

@@ -138,7 +138,7 @@ export default {
   position: absolute;
   left: 0;
   bottom: 5px;
-  cursor: pointer;
+  cursor: url('../img/click1.c201d4b5.png'), default !important;
   transition: all 3s;
   -moz-transition: all 3s;
   -webkit-transition: all 3s;
